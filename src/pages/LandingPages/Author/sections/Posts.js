@@ -93,7 +93,7 @@ function Places() {
           <Grid item xs={12} sm={6} lg={3}>
             <BackgroundBlogCard
               image={post3}
-              title="Presonal Projects"
+              title="Personal Projects"
               description=""
               action={{
                 type: "internal",
