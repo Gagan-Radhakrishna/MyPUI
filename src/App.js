@@ -23,8 +23,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
 // Material Kit 2 React themes
-import theme from "../src/assets/theme";
-import Author from "../src/pages/LandingPages/Author";
+import theme from "assets/theme";
+import Author from "pages/LandingPages/Author";
 
 // Material Kit 2 React routes
 

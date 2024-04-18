@@ -25,8 +25,8 @@ import MuiLink from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
 // Material Kit 2 React components
-import MKBox from "../../../../components/MKBox";
-import MKTypography from "../../../../components/MKTypography";
+import MKBox from "components/MKBox";
+import MKTypography from "components/MKTypography";
 
 function BackgroundBlogCard({ image, title, description, action }) {
   const cardActionStyles = {
@@ -40,9 +40,9 @@ function BackgroundBlogCard({ image, title, description, action }) {
     },
 
     "&:hover .material-icons, &:focus .material-icons, &:hover .material-icons-round, &:focus .material-icons-round":
-    {
-      transform: `translateX(6px)`,
-    },
+      {
+        transform: `translateX(6px)`,
+      },
   };
 
   return (

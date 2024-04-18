@@ -19,7 +19,7 @@ import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // Custom styles for MKBox
-import MKBoxRoot from "./MKBoxRoot";
+import MKBoxRoot from "components/MKBox/MKBoxRoot";
 
 const MKBox = forwardRef(
   ({ variant, bgColor, color, opacity, borderRadius, shadow, coloredShadow, ...rest }, ref) => (
