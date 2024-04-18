@@ -43,7 +43,7 @@ function Author() {
 
   let searchParams = useSearchParams();
 
-  console.log(searchParams[0].get("context"));
+  // console.log(searchParams[0].get("context"));
 
   useEffect(() => {
     ReactGA.initialize("G-B865N4QV8B");
