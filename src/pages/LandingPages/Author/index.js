@@ -21,7 +21,7 @@ import MKBox from "components/MKBox";
 
 import { useSearchParams } from "react-router-dom";
 
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 import { useEffect } from "react";
 
@@ -46,8 +46,10 @@ function Author() {
   // console.log(searchParams[0].get("context"));
 
   useEffect(() => {
-    ReactGA.initialize("G-B865N4QV8B");
-    ReactGA.pageview(searchParams[0].get("context"));
+    ReactGA.initialize([{
+      "trackingId": "G-B865N4QV8B"
+    }]);
+    searchParams[0].get("context") && ReactGA.send({ hitType: "pageview", page: searchParams[0].get("context").toString(), title: "Custom Title" });
   }, []);
 
   return (
