@@ -49,12 +49,13 @@ function Author() {
     ReactGA.initialize([{
       "trackingId": "G-B865N4QV8B"
     }]);
-    searchParams[0].get("context") && ReactGA.send({ hitType: "pageview", page: searchParams[0].get("context").toString(), title: "Custom Title" });
+    // searchParams[0].get("context") && ReactGA.send({ hitType: "pageview", page: searchParams[0].get("context").toString(), title: "Custom Title" });
+    searchParams[0].get("context") && console.log(searchParams[0].get("context").toString());
     searchParams[0].get("context") && ReactGA.event(
       {
         category: "From Resume",
         action: "your action",
-        label: "your label",
+        label: searchParams[0].get("context").toString(),
         value: searchParams[0].get("context").toString(),
         nonInteraction: true,
         transport: "xhr",
