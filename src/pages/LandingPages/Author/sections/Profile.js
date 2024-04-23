@@ -47,6 +47,24 @@ function Profile() {
                   <MKButton variant="outlined" color="info" size="small">
                     Follow
                   </MKButton>
+                  <MKButton variant="text" color="white" size="large" iconOnly>
+                    <a
+                      href="https://www.linkedin.com/in/gagan-r-338451171/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="fab fa-linkedin" style={{ fontSize: "1.25rem" }} />
+                    </a>
+                  </MKButton>
+                  {/* <MKButton variant="text" color="white" size="large" iconOnly>
+                    <a
+                      href="https://www.instagram.com/nomadic.cinematographer?igsh=MjM0Zm9laGtiMzhk"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="fab fa-instagram" style={{ fontSize: "1.25rem" }} />
+                    </a>
+                  </MKButton> */}
                 </a>
               </MKBox>
               <Grid container spacing={3} mb={3}>
@@ -77,7 +95,7 @@ function Profile() {
               </Grid>
               <MKTypography variant="body1" fontWeight="light" color="text">
                 A seasoned management consultant with 6 years of experience in Energy, Digital
-                Adaptation, and Healthcare. I&apos;ve led transformative initiatives, slashing costs
+                Adaptation, and Healthcare. I&apos;ve led transformative initiatives, slashing business operations costs
                 by 30-40%, and earned rave reviews with my strategic insights and continuous
                 innovation. When I&apos;m not crafting solutions, you&apos;ll find me indulging in
                 cinematography, trekking, and solo adventures, or building SAS applications in my
