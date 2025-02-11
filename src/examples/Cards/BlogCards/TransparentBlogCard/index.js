@@ -27,6 +27,8 @@ import MuiLink from "@mui/material/Link";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import Grow from '@mui/material/Grow';
+
 
 function TransparentBlogCard({ image, title, description, action }) {
   const cardActionStyles = {
@@ -40,9 +42,9 @@ function TransparentBlogCard({ image, title, description, action }) {
     },
 
     "&:hover .material-icons, &:focus .material-icons, &:hover .material-icons-round, &:focus .material-icons-round":
-      {
-        transform: `translateX(6px)`,
-      },
+    {
+      transform: `translateX(6px)`,
+    },
   };
 
   const imageTemplate = (
@@ -75,7 +77,7 @@ function TransparentBlogCard({ image, title, description, action }) {
     </MKBox>
   );
 
-  return (
+  const icon = (
     <Card
       sx={{
         background: "transparent",
@@ -139,6 +141,21 @@ function TransparentBlogCard({ image, title, description, action }) {
       </MKBox>
     </Card>
   );
+
+  return (
+    <>
+      {/* <Grow in={true}>{icon}</Grow> */}
+      {/* Conditionally applies the timeout prop to change the entry speed. */}
+      <Grow
+        in={true}
+        style={{ transformOrigin: '0 0 0' }}
+        {...(true ? { timeout: 3000 } : {})}
+      >
+        {icon}
+      </Grow>
+
+    </>
+  )
 }
 
 // Typechecking props for the TransparentBlogCard

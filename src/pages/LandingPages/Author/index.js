@@ -14,6 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
+
 import Card from "@mui/material/Card";
 
 // Material Kit 2 React components
@@ -23,25 +24,68 @@ import { useSearchParams } from "react-router-dom";
 
 import ReactGA from "react-ga4";
 
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense, useState } from "react";
+import Profile from "pages/LandingPages/Author/sections/Profile";
+import ScrollImageChanger from "pages/LandingPages/Author/sections/images";
+import MusicPlayer from "components/Music";
+import bgImage from "assets/images/me.jpeg";
+const LazyComponent = lazy(() => import("pages/LandingPages/Author/sections/Posts"));
+const LazyComponent1 = lazy(() => import("pages/LandingPages/Author/sections/Contact"));
 
 // Material Kit 2 React examples
 // import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // Author page sections
-import Profile from "pages/LandingPages/Author/sections/Profile";
-import Posts from "pages/LandingPages/Author/sections/Posts";
-import Contact from "pages/LandingPages/Author/sections/Contact";
+
+
 
 // Routes
 // import routes from "routes";
 
 // Images
-import bgImage from "assets/images/me.jpeg";
+
 
 function Author() {
 
   let searchParams = useSearchParams();
+  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible1, setIsVisible1] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 } // Load when 50% of the target is visible
+    );
+
+    const target = document.getElementById("lazy-load-section");
+    if (target) observer.observe(target);
+
+    return () => {
+      if (target) observer.unobserve(target);
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible1(true);
+        }
+      },
+      { threshold: 0.5 } // Load when 50% of the target is visible
+    );
+
+    const target = document.getElementById("lazy-load-section1");
+    if (target) observer.observe(target);
+
+    return () => {
+      if (target) observer.unobserve(target);
+    };
+  }, []);
 
   // console.log(searchParams[0].get("context"));
 
@@ -66,6 +110,7 @@ function Author() {
   return (
     <>
       <MKBox bgColor="white">
+        <MusicPlayer></MusicPlayer>
         <MKBox
           minHeight="25rem"
           width="100%"
@@ -93,10 +138,34 @@ function Author() {
           }}
         >
           <Profile />
-          <Posts />
+
+          <ScrollImageChanger />
+
+          <div id="lazy-load-section" style={{ minHeight: "50vh" }}>
+            {isVisible ? (
+              <Suspense fallback={<p></p>}>
+                <LazyComponent />
+              </Suspense>
+            ) : (
+              <p></p>
+            )}
+          </div>
+
+
+
+          {/* <Posts /> */}
           {/* <Gallery /> */}
         </Card>
-        <Contact />
+
+        <div id="lazy-load-section1" style={{ minHeight: "50vh" }}>
+          {isVisible1 ? (
+            <Suspense fallback={<p></p>}>
+              <LazyComponent1 />
+            </Suspense>
+          ) : (
+            <p></p>
+          )}
+        </div>
         {/* <Footer /> */}
       </MKBox>
     </>
