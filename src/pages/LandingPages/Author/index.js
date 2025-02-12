@@ -58,7 +58,7 @@ function Author() {
           setIsVisible(true);
         }
       },
-      { threshold: 1 } // Load when 50% of the target is visible
+      { threshold: 0.8 } // Load when 50% of the target is visible
     );
 
     const target = document.getElementById("lazy-load-section");
