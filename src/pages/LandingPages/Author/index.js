@@ -58,7 +58,7 @@ function Author() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.5 } // Load when 50% of the target is visible
+      { threshold: 1 } // Load when 50% of the target is visible
     );
 
     const target = document.getElementById("lazy-load-section");
@@ -76,7 +76,7 @@ function Author() {
           setIsVisible1(true);
         }
       },
-      { threshold: 0.5 } // Load when 50% of the target is visible
+      { threshold: 0.7 } // Load when 50% of the target is visible
     );
 
     const target = document.getElementById("lazy-load-section1");
@@ -139,8 +139,6 @@ function Author() {
         >
           <Profile />
 
-          <ScrollImageChanger />
-
           <div id="lazy-load-section" style={{ minHeight: "50vh" }}>
             {isVisible ? (
               <Suspense fallback={<p></p>}>
@@ -150,6 +148,8 @@ function Author() {
               <p></p>
             )}
           </div>
+
+          <ScrollImageChanger />
 
 
 

@@ -80,7 +80,7 @@ const ScrollImageChanger = () => {
                 .scroll-section {
                     position: relative;
                     width: 100%;
-                    height: ${images.length * 100 / 3}vh; /* Ensures smooth scrolling */
+                    height: ${images.length * 100 / (window.innerWidth <= 768 ? 2 : 3)}vh; /* Ensures smooth scrolling */
                 }
                 .image-container {
                     position: sticky;
