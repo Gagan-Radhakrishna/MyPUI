@@ -22,6 +22,10 @@ import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 import Slide from '@mui/material/Slide';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 // Images
 import bgImage from "assets/images/land.jpg";
@@ -115,24 +119,43 @@ const icon = (<MKBox component="section" py={{ xs: 0, lg: 6 }}>
                   </MKTypography>
                 </MKBox>
                 <MKBox mt={3}>
-                  <MKButton variant="text" color="white" size="large" iconOnly>
-                    <a
-                      href="https://www.instagram.com/nomadic.cinematographer?igsh=MjM0Zm9laGtiMzhk"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i className="fab fa-instagram" style={{ fontSize: "1.25rem" }} />
-                    </a>
-                  </MKButton>
-                  <MKButton variant="text" color="white" size="large" iconOnly>
-                    <a
-                      href="https://www.linkedin.com/in/gagan-r-338451171/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i className="fab fa-linkedin" style={{ fontSize: "1.25rem" }} />
-                    </a>
-                  </MKButton>
+                  <a
+                    href="https://www.instagram.com/nomadic.cinematographer?igsh=MjM0Zm9laGtiMzhk"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <MKButton variant="text" color="white" size="large" iconOnly>
+                      <InstagramIcon>
+                      </InstagramIcon>
+                    </MKButton>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/gagan-r-338451171/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <MKButton variant="text" color="white" size="large" iconOnly>
+                      <LinkedInIcon></LinkedInIcon>
+                    </MKButton>
+                  </a>
+                  <a
+                    href="https://t.me/gaganRJ"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <MKButton variant="text" color="white" size="large" iconOnly>
+                      <TelegramIcon></TelegramIcon>
+                    </MKButton>
+                  </a>
+                  <a
+                    href="https://wa.me/qr/7ASJNKGLL7IKP1"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <MKButton variant="text" color="white" size="large" iconOnly>
+                      <WhatsAppIcon></WhatsAppIcon>
+                    </MKButton>
+                  </a>
                 </MKBox>
               </MKBox>
             </MKBox>

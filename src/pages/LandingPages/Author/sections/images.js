@@ -1,4 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import MKTypography from "components/MKTypography";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+
+// Material Kit 2 React components
+import MKBox from "components/MKBox";
+
 
 const ScrollImageChanger = () => {
     const images = window.innerWidth <= 768 ? [
@@ -59,7 +66,21 @@ const ScrollImageChanger = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    return (
+    return (<>
+        <MKBox component="section" py={2}>
+            <Container>
+                <Grid container item xs={12} lg={6}>
+                    <MKTypography variant="h3" mb={6}>
+                        Through My Lens
+                    </MKTypography>
+                </Grid>
+                <Grid container item xs={12} lg={6}>
+                    <MKTypography variant="h6">
+                        Explore a collection of moments captured through my lens. Each image tells a story. Scroll through the collection to see them unfold.
+                    </MKTypography>
+                </Grid>
+            </Container>
+        </MKBox>
         <div ref={sectionRef} className="scroll-section">
             <div className="image-container" id="snaps">
                 {images.map((src, index) => (
@@ -103,7 +124,8 @@ const ScrollImageChanger = () => {
                     opacity: 1;
                 }
             `}</style>
-        </div>
+        </div></>
+
     );
 };
 

@@ -110,7 +110,6 @@ function Profile() {
                 But hey, life isn’t all about boardrooms and KPIs! When I’m off duty, you’ll find me behind a camera capturing cinematic moments, trekking up new heights, embarking on solo adventures, or geeking out over SAS applications just for fun. Work hard, explore harder! <br />
                 <MKTypography
                   component="a"
-                  href="#snaps"
                   variant="body1"
                   fontWeight="light"
                   color="info"
@@ -130,7 +129,7 @@ function Profile() {
                     },
                   }}
                 >
-                  Some of my Snapshots <Icon sx={{ fontWeight: "bold" }}>arrow_downward</Icon>
+                  My Accomplishments<Icon sx={{ fontWeight: "bold" }}>arrow_downward</Icon>
                 </MKTypography>
               </MKTypography>
             </Grid>

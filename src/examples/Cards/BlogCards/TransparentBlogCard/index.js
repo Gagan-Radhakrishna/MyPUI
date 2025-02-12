@@ -30,7 +30,7 @@ import MKTypography from "components/MKTypography";
 import Grow from '@mui/material/Grow';
 
 
-function TransparentBlogCard({ image, title, description, action }) {
+function TransparentBlogCard({ image, title, description, action, time }) {
   const cardActionStyles = {
     display: "flex",
     alignItems: "center",
@@ -108,6 +108,9 @@ function TransparentBlogCard({ image, title, description, action }) {
         )}
         <MKTypography variant="body2" component="p" color="text" mb={3}>
           {description}
+        </MKTypography>
+        <MKTypography variant="h6" component="p" color="dark" mb={3}>
+          {time}
         </MKTypography>
         {action.type === "internal" ? (
           <MKTypography
